@@ -30,6 +30,7 @@ class Song
   def artist_name=(name)
     if Artist.all.find{|artist| artist.name == name}
       artist = Artist.all.find{|artist| artist.name == name}
+      self.artist = artist 
       binding.pry
     else 
       new_artist = Artist.new(name)
